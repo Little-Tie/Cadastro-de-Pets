@@ -46,6 +46,7 @@ void opcoes(){
 	printf("Mostrar a quantidade de Pets de X especie: [9]\n");
 	printf("Listagem de todos os Pets cadastrados: [10]\n");
 	printf("Sair do Cadastro: [11]\n\n");
+	printf("Listagem de todos os Pets cadastrados: [10]\n\n");
 	printf("Digite uma opcao: ");
 }
 
@@ -130,6 +131,47 @@ int main(){
 	}
 	
 	printf("\nFim do Cadastro de pet\n");
+	abertura();
+	opcoes();
+	
+	int opcao;
+	
+	scanf("%d",&opcao);
+	switch ( opcao )
+	{
+		case 1:
+			break;
+			
+		case 2:
+			break;
+			
+		case 3:
+			break;
+			
+		case 4:
+			break;
+			
+		case 5:
+			break;
+			
+		case 6:
+			break;
+			
+		case 7:
+			break;
+			
+		case 8:
+			break;
+			
+		case 9:
+			break;
+			
+		case 10:
+			break;
+			
+		default :
+			printf("\nOPCAO INVALIDA!!! Escolher outra\n\n");
+	}
 	
 	
 	return 0;
