@@ -20,7 +20,7 @@ void novoPet(struct no *lista,char n[12],char e[20], char r[10], char s, int i){
 	strcpy( novoNo->sexo, s );
 	novoNo->idade = i;
 	novoNo->proximo = (struct no*)NULL;
-	
+
 	while (lista->proximo != NULL){
 		lista = lista->proximo;
 	}
@@ -51,128 +51,126 @@ void opcoes(){
 }
 
 int main(){
-	
+
 	struct no *primeiroNo;
 	primeiroNo = NULL;
-	
+
 		int opcao;
 		char n[12];
 		char e[20];
 		char r[10];
-		char s; 
+		char s;
 		int i;
-		
+
 	abertura();
 	while(opcao != 11){
-		
+
 		opcoes();
-		
+
 		scanf("%d",&opcao);
 		switch ( opcao )
 		{
 			case 1:
 				printf("\nInsira o nome do Pet: ");
 				scanf("%s",&n);
-				printf("\nInsira a especie do %s: ",n);
+				printf("\nInsira a especie de %s: ",n);
 				scanf("%s",&e);
-				printf("\nInsira a raca do %s: ",n);
+				printf("\nInsira a raca de %s: ",n);
 				scanf("%s",&r);
-				printf("\nInsira o sexo do %s: ",n);
+				printf("\nInsira o sexo de %s: ",n);
 				scanf("%s",&s);
 				printf("\nInsira a idade do %s: ",n);
 				scanf("%d",&i);
 				//novoPet(primeiroNo,n,e,r,s,i);
-				
+
 				opcao = NULL;
 				break;
-				
+
 			case 2:
 				opcao = NULL;
 				break;
-				
+
 			case 3:
 				opcao = NULL;
 				break;
-				
+
 			case 4:
 				opcao = NULL;
 				break;
-				
+
 			case 5:
 				opcao = NULL;
 				break;
-				
+
 			case 6:
 				opcao = NULL;
 				break;
-				
+
 			case 7:
 				opcao = NULL;
 				break;
-				
+
 			case 8:
 				opcao = NULL;
 				break;
-				
+
 			case 9:
 				opcao = NULL;
 				break;
-				
+
 			case 10:
 				opcao = NULL;
 				break;
-				
+
 			case 11:
 				break;
-				
+
 			default :
 				printf("\nOPCAO INVALIDA!!! Escolher outra\n\n");
 		}
 	}
-	
+
 	printf("\nFim do Cadastro de pet\n");
 	abertura();
 	opcoes();
-	
-	int opcao;
-	
+
 	scanf("%d",&opcao);
 	switch ( opcao )
 	{
 		case 1:
 			break;
-			
+
 		case 2:
 			break;
-			
+
 		case 3:
 			break;
-			
+
 		case 4:
 			break;
-			
+
 		case 5:
 			break;
-			
+
 		case 6:
 			break;
-			
+
 		case 7:
 			break;
-			
+
 		case 8:
 			break;
-			
+
 		case 9:
 			break;
-			
+
 		case 10:
 			break;
-			
+
 		default :
 			printf("\nOPCAO INVALIDA!!! Escolher outra\n\n");
 	}
-	
-	
+
+
 	return 0;
 }
