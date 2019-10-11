@@ -13,7 +13,7 @@ struct no{
 	struct no *proximo;
 };
 
-void novoPet(struct no *lista,char n[12],char e[20], char r[10], char s, int i){
+void novoPet(struct no *lista,char n,char e, char r, char s, int i){
 	struct no *novoNo;
 	novoNo = (struct no*) malloc(sizeof(struct no));
 	strcpy( novoNo->nome, n );
@@ -22,11 +22,18 @@ void novoPet(struct no *lista,char n[12],char e[20], char r[10], char s, int i){
 	strcpy( novoNo->sexo, s );
 	novoNo->idade = i;
 	novoNo->proximo = (struct no*)NULL;
-
+	
 	while (lista->proximo != NULL){
 		lista = lista->proximo;
 	}
 	lista->proximo = novoNo;
+}
+
+void listar(struct no* lista){
+	while(lista!=NULL){
+		printf("\n%d\t%d\t%d\t%d\t%d\t%d",lista->nome,lista->especie,lista->raca,lista->sexo,lista->idade);
+		lista = lista->proximo;
+	}
 }
 
 void abertura(){
@@ -37,7 +44,7 @@ void abertura(){
 
 void opcoes(){
 	textcolor(AMARELO);
-	printf("Bem Vindo ao Cadastro de Pets!!!\nSelecione qual tarefa deseja realizar:\n\n");
+	printf("\nBem Vindo ao Cadastro de Pets!!!\nSelecione qual tarefa deseja realizar:\n\n");
 	textcolor(AZUL_ESCURO);
 	printf("Inclusao de um novo Pet: [1]\n");
 	textcolor(VERMELHO_ESCURO);
@@ -57,21 +64,22 @@ void opcoes(){
 }
 
 int main(){
+		
 	struct no *primeiroNo;
 	primeiroNo = NULL;
-
+	
 		int opcao;
 		char n[12];
 		char e[20];
 		char r[10];
-		char s;
+		char s; 
 		int i;
-
+		
 	abertura();
 	while(opcao != 11){
-
+		
 		opcoes();
-
+		
 		scanf("%d",&opcao);
 		switch ( opcao )
 		{
@@ -85,112 +93,72 @@ int main(){
 					textcolor(BRANCO);
 				scanf("%s",&e);
 					textcolor(AZUL_ESCURO);
-				printf("\nInsira a raca do(a) %s: ",n);
+				printf("\nInsira a raca do(a) %s [ M / F ]: ",n);
 					textcolor(BRANCO);
 				scanf("%s",&r);
 					textcolor(AZUL_ESCURO);
 				printf("\nInsira o sexo do(a) %s: ",n);
 					textcolor(BRANCO);
-				printf("\nInsira a especie de %s: ",n);
-				scanf("%s",&e);
-				printf("\nInsira a raca de %s: ",n);
-				scanf("%s",&r);
-				printf("\nInsira o sexo de %s: ",n);
 				scanf("%s",&s);
 					textcolor(AZUL_ESCURO);
 				printf("\nInsira a idade do(a) %s: ",n);
 					textcolor(BRANCO);
 				scanf("%d",&i);
-				//novoPet(primeiroNo,n,e,r,s,i);
-
+				
+				novoPet(primeiroNo,n,e,r,s,i);
+				fflush(stdin);
 				opcao = NULL;
 				printf("\n\n");
 				break;
-
+				
 			case 2:
 				opcao = NULL;
 				break;
-
+				
 			case 3:
 				opcao = NULL;
 				break;
-
+				
 			case 4:
 				opcao = NULL;
 				break;
-
+				
 			case 5:
 				opcao = NULL;
 				break;
-
+				
 			case 6:
 				opcao = NULL;
 				break;
-
+				
 			case 7:
 				opcao = NULL;
 				break;
-
+				
 			case 8:
 				opcao = NULL;
 				break;
-
+				
 			case 9:
 				opcao = NULL;
 				break;
-
+				
 			case 10:
+				printf("\n\nLISTA DOS PETS CADASTRADOS");
+				printf("\nNome\tEspecie\tRaca\tSexo\tIdade\n");
+				listar(primeiroNo);
 				opcao = NULL;
 				break;
-
+				
 			case 11:
 				break;
-
+				
 			default :
 				printf("\nOPCAO INVALIDA!!! Escolher outra\n\n");
 		}
 	}
-
+	
 	printf("\nFim do Cadastro de pet\n");
-	abertura();
-	opcoes();
-
-	scanf("%d",&opcao);
-	switch ( opcao )
-	{
-		case 1:
-			break;
-
-		case 2:
-			break;
-
-		case 3:
-			break;
-
-		case 4:
-			break;
-
-		case 5:
-			break;
-
-		case 6:
-			break;
-
-		case 7:
-			break;
-
-		case 8:
-			break;
-
-		case 9:
-			break;
-
-		case 10:
-			break;
-
-		default :
-			printf("\nOPCAO INVALIDA!!! Escolher outra\n\n");
-	}
 
 	return 0;
 }
